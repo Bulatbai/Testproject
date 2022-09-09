@@ -9,13 +9,23 @@
  {% comment %} <link rel="shortcut icon" href="static/img/main.ico" type="image/x-icon"/> {% endcomment %}
  
     <style>
-
+    
+      #color{
+        color: white; 
+        height: 15px;
+        width: 20px;
+        background-color: green; 
+      }
+ 
  
       #Otstup{
         margin-left: 60px;
         margin-top: 50px;
         margin-right: 350px;
         background-color: white;
+    }
+    #tup{
+      margin-right: 600px;
     }
 
     #navbar {
@@ -561,6 +571,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
               <ul>
                   <li><a href="/blogi/">Blog</a></li>
                 
+                  <form action="{% url 'search-element' %}" method="GET">
+                    <input type='search' type='text' name='q' placeholder="search">
+                    <button type='submit'>search</button>
+
+                  </form>
                   
                   <li><a href="/admin/categorii/post/">Портфолио</a></li>
                  
@@ -593,7 +608,28 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 {%endblock pages%}
  
- 
+{% if post.has_other_pages%}
+  <nav  id="tup">
+    <ul>
+        {% for i in post.paginator.page_range%}
+        {% if post.number == i %}
+        <li id="color" class="page-num page-num-selected">{{ i }}</li> 
+
+     {% elif i >= post.number|add:-2 and i <= post.number|add:2  %}
+
+          
+      {% comment %} <a id="ot" href="?page={{i}}">{{i}}</a>   {% endcomment %}
+         
+           <li class="page-num">
+             <a href="?page={{ i }}">{{ i }}</a>
+        </li>
+    {% endif %}
+        {% endfor %}
+    </ul>
+</nav>     
+ {%endif%}
+
+
 
 
 	<main class="content">
@@ -611,6 +647,8 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
                   
       
     
+
+
 
 
 				<ul class="products-grid">  

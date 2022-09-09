@@ -598,7 +598,13 @@
     {% extends 'basesmy.html' %} 
     {%block pages%}
  
+
+
+
+
+    
     {% for i in post%}
+   
     <main id="Otstup">
        
         <div class="container-results large-images"> 
@@ -645,10 +651,11 @@
                             
      
                 </div>
-
+         
                 <div class="title">
                     <a class="d-block" href="{% url 'place' i.id %}" class="title ">
                    {{i.title}}
+               
                     </a>
                 </div>
  
@@ -707,6 +714,12 @@
                             <span class="ltr-title">Additional Options</span>
                         </div>
                    
+
+
+
+                        
+
+
             </div>
         
           </div>
@@ -714,7 +727,18 @@
        </div>
  
      </main>
-    {% endfor %} 
-    {%endblock%}
+     
+    </span>
+</div>
+
+    </span>
+</div>
+{%endfor%}
+ 
+
+    
+{%endblock%}
+
+
  </body>
  </html>
