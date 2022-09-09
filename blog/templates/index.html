@@ -1,10 +1,24 @@
-<form method="post" enctype="multipart/form-data">
+ {% extends 'basesmy.html' %} 
+ {%block pages%}
+ <div class="container">
+<style>
+#Otstup{
+  margin-left: 80px;
+}
+
+</style>
+<form id="Otstup" method="post" enctype="multipart/form-data">
+ 
     {% csrf_token %}
      {{ form.as_p }}
+   
     <button type="submit">Upload</button>
+
   </form>
-  
+   </div>
   {% if img_obj %}
     <h3>Succesfully uploaded : {{img_obj.title}}</h3>
     <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px">
   {% endif %}
+
+{%endblock%}

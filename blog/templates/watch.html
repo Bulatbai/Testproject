@@ -1,0 +1,185 @@
+
+       {% extends 'basesmy.html' %}
+       {% block  pages%}
+         
+ 
+       
+<div class="container">
+    <div class="woocommerce-notices-wrapper">
+     
+     
+      
+{%if  postingo.image %}
+ 
+
+
+
+
+  <div id="product-385" class="product type-product post-385 status-publish first instock product_cat-cake product_cat-fruit product_cat-vegetable product_tag-fruits has-post-thumbnail shipping-taxable purchasable product-type-simple">
+    <div class="woocommerce-product-gallery woocommerce-product-gallery--with-images woocommerce-product-gallery--columns-4 images" data-columns="4" style="opacity: 1; transition: opacity 0.25s ease-in-out 0s;"><a href="#" class="woocommerce-product-gallery__trigger"><img draggable="false" role="img" class="emoji" alt="🔍" src="{{postingo.image.url }}"></a>
+<figure class="woocommerce-product-gallery__wrapper">
+<div data-thumb=" " data-thumb-alt="" class="woocommerce-product-gallery__image" style="position: relative; overflow: hidden;"><a href="{{postingo.image.url }}"><img width="530" height="530" src="{{postingo.image.url }}" class="wp-post-image" alt="" loading="lazy" title="банан" data-caption="" data-src="{{postingo.image.url }}" data-large_image="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1.jpg" data-large_image_width="1500" data-large_image_height="1500" srcset="" sizes="(max-width: 530px) 100vw, 530px"></a><img role="presentation" alt="" src="https://themes.envytheme.com/fodia/wp-content/uploads/2020/09/banana-1.jpg" class="zoomImg" style="position: absolute; top: -560.881px; left: -881.343px; opacity: 0; width: 1500px; height: 1500px; border: none; max-width: none; max-height: none;"></div>	</figure>
+</div><h1> 
+{%else%}
+
+<h1>Your fogot post image</h1>
+{% endif%}
+    <div class="summary entry-summary products-details">
+      
+        <h3 class="product_title entry-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{postingo.title}}</font></font></h3><p class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> {{postingo.price}}</font></font></bdi></span></p>
+<div class="woocommerce-product-details__short-description">
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et. </font><font style="vertical-align: inherit;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut Labore et.</font></font></p>
+</div>
+
+
+ 
+</div>
+    </div>
+
+  
+
+
+
+
+ 
+ {% comment %} {% if user.is_authenticated%} {% endcomment %}
+    <a class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a>
+    <a class='btn btn-olg btn-danger' href="{% url 'del_place' postingo.id %}">Удалить</a>
+    {% comment %} {% else%}
+    <h2>registr Please</h2>
+    {% endif%} {% endcomment %}
+     
+    
+
+ 
+
+
+
+      
+
+
+
+<form>
+         <p class="comment-form-email"><input id="email" name="email" type="email" class="form-control" value="" placeholder="Эл. адрес*" size="30" required=""><button>Send</button></p>
+ 
+
+    {% comment %} <input type="hidden" name="comment_parent" id="comment_parent" value="0">  {% endcomment %}
+
+</p></form>
+	</div><!-- #respond -->
+				</div>
+		</div>
+	
+	<div class="clear"></div>
+</div>
+			</div>
+			</div>
+   
+ <div class="container">
+            <div class="rental-info">
+                
+                <span class="nearest-intersection">
+                    <img class="primary-attribute-icon" height="20px" width="25px" src="https://ca.classistatic.com/static/V/11155/img/srp-icons/icon-location-pin.svg" alt="Nearest Intersection Icon">
+                    <span class="intersection">College Street</span>
+                    &nbsp;/&nbsp;
+                    <span class="intersection">Huron Street</span>
+                    <span class="tooltip-trigger icon" data-content="NearestIntersectionTooltip1632175981" data-position-my="bottom center" data-hasqtip="4" style="display: none;">?</span>
+                    <span class="tooltip-content" id="NearestIntersectionTooltip1632175981">
+                        College Street
+                        &nbsp;/&nbsp;
+                        Huron Street
+                     </span>
+                </span>
+                
+                
+                <span class="bedrooms">
+                    <img class="primary-attribute-icon" height="20px" width="25px" src="https://ca.classistatic.com/static/V/11155/img/icon/icon-attributes-numberbedrooms.svg" alt="">
+                    Beds:{{postingo.amount_p}}
+        
+                </span>
+                
+                    <div class="ltr-additional-options">
+                            <img class="ltr-badge" height="20px" width="25px" src="https://ca.classistatic.com/static/V/11155/img/srp-icons/additional-options-badge.svg" alt="Additional Options Icon">
+                            <span class="ltr-title">Additional Options</span>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  <script type="application/ld+json">{"@context":"https:\/\/schema.org\/","@type":"Product","@id":"https:\/\/themes.envytheme.com\/fodia\/product\/fresh-banana\/#product","name":"Fresh Banana","url":"https:\/\/themes.envytheme.com\/fodia\/product\/fresh-banana\/","description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et.","image":"https:\/\/themes.envytheme.com\/fodia\/wp-content\/uploads\/2020\/09\/banana-1.jpg","sku":385,"offers":[{"@type":"Offer","price":"50.00","priceValidUntil":"2023-12-31","priceSpecification":{"price":"50.00","priceCurrency":"USD","valueAddedTaxIncluded":"false"},"priceCurrency":"USD","availability":"http:\/\/schema.org\/InStock","url":"https:\/\/themes.envytheme.com\/fodia\/product\/fresh-banana\/","seller":{"@type":"Organization","name":"Fodia","url":"https:\/\/themes.envytheme.com\/fodia"}}]}</script>
+
+  <script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+  <script type="text/javascript" id="contact-form-7-js-extra">
+    /* <![CDATA[ */
+    var wpcf7 = {"api":{"root":"https:\/\/themes.envytheme.com\/fodia\/wp-json\/","namespace":"contact-form-7\/v1"}};
+    /* ]]> */
+    </script>
+
+    <script src="https://themes.envytheme.com/fodia/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.5.6.1" id="contact-form-7-js"></script>
+    <script src="https://themes.envytheme.com/fodia/wp-includes/js/jquery/jquery.form.min.js?ver=4.3.0" id="jquery-form-js"></script>
+
+<script src="https://themes.envytheme.com/fodia/wp-includes/js/jquery/jquery.form.min.js?ver=4.3.0" id="jquery-form-js"></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+  /* <![CDATA[ */
+  var wc_add_to_cart_params = {"ajax_url":"\/fodia\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/fodia\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/themes.envytheme.com\/fodia\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+  /* ]]> */
+  </script>
+  <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=6.5.1" id="wc-add-to-cart-js"></script>
+  <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/zoom/jquery.zoom.min.js?ver=1.7.21-wc.6.5.1" id="zoom-js"></script>
+
+  <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/flexslider/jquery.flexslider.min.js?ver=2.7.2-wc.6.5.1" id="flexslider-js"></script>
+
+
+
+<script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe.min.js?ver=4.1.1-wc.6.5.1" id="photoswipe-js"></script>
+
+<script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/photoswipe/photoswipe-ui-default.min.js?ver=4.1.1-wc.6.5.1" id="photoswipe-ui-default-js"></script>
+
+<script type="text/javascript" id="wc-single-product-js-extra">
+  /* <![CDATA[ */
+  var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes","flexslider":{"rtl":false,"animation":"slide","smoothHeight":true,"directionNav":false,"controlNav":"thumbnails","slideshow":false,"animationSpeed":500,"animationLoop":false,"allowOneSlide":false},"zoom_enabled":"1","zoom_options":[],"photoswipe_enabled":"1","photoswipe_options":{"shareEl":false,"closeOnScroll":false,"history":false,"hideAnimationDuration":0,"showAnimationDuration":0},"flexslider_enabled":"1"};
+  /* ]]> */
+  </script>
+  <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/frontend/single-product.min.js?ver=6.5.1" id="wc-single-product-js"></script>
+  <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/js-cookie/js.cookie.min.js?ver=2.1.4-wc.6.5.1" id="js-cookie-js"></script>
+  <script type="text/javascript" id="woocommerce-js-extra">
+    /* <![CDATA[ */
+    var woocommerce_params = {"ajax_url":"\/fodia\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/fodia\/?wc-ajax=%%endpoint%%"};
+    /* ]]> */
+    </script>
+    <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js?ver=6.5.1" id="woocommerce-js"></script>
+
+    <script type="text/javascript" id="wc-cart-fragments-js-extra">
+      /* <![CDATA[ */
+      var wc_cart_fragments_params = {"ajax_url":"\/fodia\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/fodia\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_f8335c787e27b1705b41cf8cbb12705f","fragment_name":"wc_fragments_f8335c787e27b1705b41cf8cbb12705f","request_timeout":"5000"};
+      /* ]]> */
+      </script>
+      <script src="https://themes.envytheme.com/fodia/wp-content/plugins/woocommerce/assets/js/frontend/cart-fragments.min.js?ver=6.5.1" id="wc-cart-fragments-js"></script>
+
+<script src="https://themes.envytheme.com/fodia/wp-includes/js/comment-reply.min.js?ver=6.0.1" id="comment-reply-js"></script>
+{% endblock%}

@@ -592,20 +592,15 @@
     <meta http-equiv="origin-trial" content="A+cA2PUOfIOKAdSDJOW5CP9ZlxONy1yu+hqAq72zUtKw4rLdihqRp6Nui/jUyCyegr+BUtH+C+Elv0ufn05yBQEAAACFeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="A+zsdH3aNZT/bkjT8U/o5ACzyaeNYzTvtoVmwf/KOilfv39pxY2AIsOwhQJv+YnXp98i3TqrQibIVtMWs5UHjgoAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><meta http-equiv="origin-trial" content="AxceVEhIegcDEHqLXFQ2+vPKqzCppoJYsRCZ/BdfVnbM/sUUF2BXV8lwNosyYjvoxnTh2FC8cOlAnA5uULr/zAUAAACLeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjeVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjY5NzY2Mzk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ=="><script src="https://securepubads.g.doubleclick.net/gpt/pubads_impl_2022090101.js" async=""></script><meta http-equiv="origin-trial" content="A+Mt6wQ7St5J869uXW1A/aL3lJaYJYff4gUwPvwSbTuZ7z/T1l4np41d/t4W9TdeS/EMua5fYfBoz4v4TT9tdAgAAACAeyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5uZXQ6NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY2MTI5OTE5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><script src="https://bat.bing.com/p/action/5079160.js" type="text/javascript" async="" data-ueto="ueto_8f38ed6f40"></script><script charset="utf-8" src="//ca.classistatic.com/service-static/frontend-service/en-i18n-json.c814eddb.js"></script><link rel="stylesheet" type="text/css" href="//ca.classistatic.com/service-static/frontend-service/selectLocationModalContents.d5f11a43.css"><script charset="utf-8" src="//ca.classistatic.com/service-static/frontend-service/selectLocationModalContents.97f61cc2.js"></script><meta http-equiv="origin-trial" content="A0KGawWMfAygakxUO+Z3rulPwK2j0AqkLneiEt4pAI951GYaafeHNV9Ya+PAn7s0y12QSrfTjc9LdOUU+QfkdQwAAACAeyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5jb206NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY2OTc2NjM5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0="><link rel="preload" href="https://adservice.google.com/adsid/integrator.js?domain=www.kijiji.ca" as="script"><script type="text/javascript" src="https://adservice.google.com/adsid/integrator.js?domain=www.kijiji.ca"></script></head>
 
  <body>
+ 
 
-<div class="container">
-   
-    <ul id="navbar">
-        
-        <li><a href="/upload/">Create post</a></li>
-        <li><a href="#">Новости</a></li>
-        <li><a href="#">Контакты</a></li>
-        <li><a href="#">О нас</a></li>
-      </ul>
-    </div>
-    
+
+    {% extends 'basesmy.html' %} 
+    {%block pages%}
+ 
     {% for i in post%}
     <main id="Otstup">
+       
         <div class="container-results large-images"> 
             <div class="container-results large-images"> 
 <div  class="container-results large-images">
@@ -652,8 +647,8 @@
                 </div>
 
                 <div class="title">
-                    <a href="/v-apartments-condos/city-of-toronto/renovated-one-bedroom-college-and-spadina-id-1326/1632175981" class="title ">
-                        Renovated one bedroom, College and Spadina - ID 1326
+                    <a class="d-block" href="{% url 'place' i.id %}" class="title ">
+                   {{i.title}}
                     </a>
                 </div>
  
@@ -664,16 +659,17 @@
                 <div class="location">
  
                                 <span class="">
-                             
-                                            Toronto
+                             {{i.location}}
+                                             
                                   </span>
-                             <span class="date-posted">&lt; 1 minute ago</span>
+                             <span class="date-posted">&lt;21.32.23 </span>
                     
                 </div>
  
 
                 <div class="description">
-                    Renovated Akelius one bedroom apartment for rent. College &amp; Spadina in the Downtown West neighborhood, Toronto. renovated one bedroom semi-basement - 1 bathroom - approximately 428 square feet - ...
+                     {{i.description}}&amp; Spadina in the Downtown West neighborhood, Toronto. renovated one bedroom semi-basement - 1 bathroom - approximately 428 square feet - ...
+        
   
                     </div>
                 </div> 
@@ -710,11 +706,15 @@
                             <img class="ltr-badge" src="https://ca.classistatic.com/static/V/11155/img/srp-icons/additional-options-badge.svg" alt="Additional Options Icon">
                             <span class="ltr-title">Additional Options</span>
                         </div>
+                   
             </div>
+        
           </div>
         </div>
        </div>
+ 
      </main>
     {% endfor %} 
+    {%endblock%}
  </body>
  </html>
