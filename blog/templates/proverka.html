@@ -598,11 +598,6 @@
     {% extends 'basesmy.html' %} 
     {%block pages%}
  
-
-
-
-
-    
     {% for i in post%}
    
     <main id="Otstup">
@@ -650,14 +645,14 @@
       </div>
                             
      
-                </div>
+            </div>
          
                 <div class="title">
                     <a class="d-block" href="{% url 'place' i.id %}" class="title ">
                    {{i.title}}
                
                     </a>
-                </div>
+            </div>
  
                 <div class="distance">
                     
@@ -669,11 +664,9 @@
                              {{i.location}}
                                              
                                   </span>
-                             <span class="date-posted">&lt;21.32.23 </span>
+                             <span class="date-posted"> {{i.create_at}}</span>
                     
                 </div>
- 
-
                 <div class="description">
                      {{i.description}}&amp; Spadina in the Downtown West neighborhood, Toronto. renovated one bedroom semi-basement - 1 bathroom - approximately 428 square feet - ...
         
@@ -683,10 +676,6 @@
             </div>
          </div>
       
-
-
-
-
             <div class="rental-info">
                 
                 <span class="nearest-intersection">
@@ -713,13 +702,7 @@
                             <img class="ltr-badge" src="https://ca.classistatic.com/static/V/11155/img/srp-icons/additional-options-badge.svg" alt="Additional Options Icon">
                             <span class="ltr-title">Additional Options</span>
                         </div>
-                   
-
-
-
-                        
-
-
+                
             </div>
         
           </div>
@@ -734,10 +717,9 @@
     </span>
 </div>
 {%endfor%}
- 
-
-    
 {%endblock%}
+
+
 
 
  </body>

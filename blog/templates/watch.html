@@ -42,13 +42,7 @@
 
 
  
- {% comment %} {% if user.is_authenticated%} {% endcomment %}
-    <a class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a>
-    <a class='btn btn-olg btn-danger' href="{% url 'del_place' postingo.id %}">Удалить</a>
-    {% comment %} {% else%}
-    <h2>registr Please</h2>
-    {% endif%} {% endcomment %}
-     
+
     
 
  
@@ -60,7 +54,7 @@
 
 
 <form>
-         <p class="comment-form-email"><input id="email" name="email" type="email" class="form-control" value="" placeholder="Эл. адрес*" size="30" required=""><button>Send</button></p>
+         {% comment %} <p class="comment-form-email"><input id="email" name="email" type="email" class="form-control" value="" placeholder="Эл. адрес*" size="30" required=""><button>Send</button></p> {% endcomment %}
  
 
     {% comment %} <input type="hidden" name="comment_parent" id="comment_parent" value="0">  {% endcomment %}
@@ -105,8 +99,15 @@
                     </div>
                 </div>
 
-
-
+<div id='Отступ'>
+ {% if user.is_authenticated%}
+ <nav>
+   <a  id='colors' class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a> 
+  <a  id='colors' class='btn btn-olg btn-danger' href="{% url 'del_place' postingo.id %}">Удалить</a>  
+ </nav>
+  
+ {% endif%}  
+</div>
 
 
 

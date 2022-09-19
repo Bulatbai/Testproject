@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- CSS only -->
+ <style>
+    #left{
+        margin-left: 500px
+        
+    }
+    #size{
+        height: 30px;
+        width: 300px;
+    }
+ </style>
+</head>
+<body>
+    {% extends 'basesmy.html' %} 
+    {%block pages%}
+    
+    {% if error %}
+        <div style="color:red;">{{ error }}</div>
+    {% endif %}
+<div id='left'>
+    <form method="post">
+        <h1>Вход на сайт</h1>
+        {% csrf_token %}
+        <p><input id='size' type="text" name="username" placeholder="Логин"></p>
+        <p><input id='size' type="password" name="password" placeholder="Пароль"><p>
+        <input type="submit" value="Войти">
+    </form>
+</div>
+{% endblock%}
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- CSS only -->
+    <style>
+        #left{
+            margin-left: 500px
+            
+        }
+        #size{
+            height: 30px;
+            width: 300px;
+        }
+     </style>
+</head>
+{% extends 'basesmy.html' %} 
+{%block pages%}
+
+<body>
+    <div id='left'>
+    <h1>Регистрация</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p><input id='size' type="text" name="username" placeholder='username'></p>
+       <p><input  id='size' type="email" name="email" placeholder='Email'></p>
+        <p><input id='size' type="password" name="password" placeholder='password'></p>
+         <p><input id='size' type="password" name="password2" placeholder='confirm password'></p>
+
+        <input type="submit" value="Регистрация">
+    </form>
+</div>
+    {% endblock%}
+</body>
+</html>

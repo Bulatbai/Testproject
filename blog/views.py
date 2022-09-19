@@ -1,18 +1,15 @@
-from msilib.schema import ListView
-from multiprocessing import context
-from pyexpat import model
-from turtle import title
-from urllib import request
-from winreg import QueryValue
+ 
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
 from django.shortcuts import render,HttpResponse
 from django.http import Http404
 from .forms import ImageForm
 from . import models
-from django.views.generic import ListView
-
-
+from django.urls import reverse
+from django.contrib.auth.models import User
+from django.views.generic import TemplateView
+from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 
 def image_upload_view(request):
     """Process images uploaded by users"""
@@ -20,9 +17,10 @@ def image_upload_view(request):
         form = ImageForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            return redirect(Blogi)
             # Get the current instance object to display in the template
-            img_obj = form.instance
-            return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
+        img_obj = form.instance
+        return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
     else:
         form = ImageForm()
     return render(request, 'index.html', {'form': form}) 
@@ -31,11 +29,7 @@ def image_upload_view(request):
 
 
 
-
-# def Blogi(request):
-#     user = models.Image.objects.all()
-#     return render(request, 'proverka.html', {'post': user})
-   
+ 
 
 def detail_post(request, id):
     # user_ob = Post.objects.all()
@@ -89,13 +83,13 @@ def delete_place(request, id):
 
 
 
-def Search(request):
-    QueryValue = request.GET.get('q', '')
-    if QueryValue:
-        post = models.Image.objects.filter(title__icontains=QueryValue)
-    else:
-        post = models.Image.objects.all()
-    return render(request, 'basesmy.html', {'post': post})
+# def Search(request):
+#     QueryValue = request.GET.get('q', '')
+#     if QueryValue:
+#         post = models.Image.objects.filter(title__icontains=QueryValue)
+#     else:
+#         post = models.Image.objects.all()
+#     return render(request, 'basesmy.html', {'post': post})
 
 
 # class Search(ListView):
@@ -130,3 +124,43 @@ def Blogi(request):
 
 
 
+class RegisterView(TemplateView):
+    template_name = "registration/register.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            password2 = request.POST.get('password2')
+
+            if password == password2:
+                User.objects.create_user(username, email, password)
+                return redirect(reverse("login"))
+
+        return render(request, self.template_name) 
+
+class LoginView(TemplateView):
+    template_name = "registration/login.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        context = {}
+        if request.method == 'POST':
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect("search-element")
+            else:
+                context['error'] = "Логин или пароль неправильные"
+        return render(request, self.template_name, context)
+
+
+class ProfilePage(TemplateView):
+    template_name = "registration/profile.html"
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('login')
