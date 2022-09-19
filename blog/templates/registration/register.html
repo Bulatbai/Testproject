@@ -4,15 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <!-- CSS only -->
+ 
     <style>
-        #left{
-            margin-left: 500px
-            
-        }
-        #size{
-            height: 30px;
-            width: 300px;
-        }
+ 
      </style>
 </head>
 {% extends 'basesmy.html' %} 
@@ -20,17 +14,24 @@
 
 <body>
     <div id='left'>
-    <h1>Регистрация</h1>
-    <form method="post">
-        {% csrf_token %}
-        <p><input id='size' type="text" name="username" placeholder='username'></p>
-       <p><input  id='size' type="email" name="email" placeholder='Email'></p>
-        <p><input id='size' type="password" name="password" placeholder='password'></p>
-         <p><input id='size' type="password" name="password2" placeholder='confirm password'></p>
+    <h1 id='size'>Регистрация</h1>
+    {% if error %}
+    <div id='size' style="color:red;">{{ error }}</div>
+    {% endif %}
 
-        <input type="submit" value="Регистрация">
+    <form classs='form-box'  method="post">
+        {% csrf_token %}
+        <p><input id='size' type="text" name="username" placeholder='username' required=''></p>
+       <p><input  id='size' type="email" name="email" placeholder='Email'  required=''></p>
+        <p><input id='size' type="password" name="password" placeholder='password'  required=''></p>
+         <p><input id='size' type="password" name="password2" placeholder='confirm password'  required=''></p>
+
+        <input id='size' type="submit" value="Регистрация">
     </form>
 </div>
-    {% endblock%}
+
+
+
+{% endblock%}
 </body>
 </html>

@@ -11,6 +11,6 @@ class ImageForm(forms.ModelForm):
     """Form for the image model"""
     class Meta:
         model = Image
-        fields = ('title','location', 'image','description', 'amount_p', 'price')
+        fields = ('user','title','location', 'image','description', 'amount_p', 'price')
 
 

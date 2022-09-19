@@ -32,7 +32,7 @@ def image_upload_view(request):
  
 
 def detail_post(request, id):
-    # user_ob = Post.objects.all()
+    # user_ob = models.Image.objects.all()
     # user_obl = models.Image.objects.all()
     # if request.method == "POST":
     #     comment_person = Coment_Form(request.POST)
@@ -47,10 +47,11 @@ def detail_post(request, id):
         try:
             comment =  {}
              
-        except models.Model_Register.DoesNotExist:
-            return HttpResponse('No Comments')
+        except models.Image.DoesNotExist:
+            return HttpResponse('<h1>No Comments</h1>')
     except models.Image.DoesNotExist:
-        raise Http404('Post does not exixst, baby')
+        # raise Http404('Post does not exixst, baby')
+        return  HttpResponse('<h1> 404 Page not found </h1>')
 
     return render(request, 'watch.html', {'postingo': ost, 'com': comment})
 
@@ -110,17 +111,21 @@ def Blogi(request):
     QueryValue = request.GET.get('q')
     if QueryValue:
         post = models.Image.objects.filter(title__icontains=QueryValue)
+        
     else:
         post = models.Image.objects.all()
-   
-
+        
+        
+ 
     # contact_list = models.Image.objects.all()
     paginator = Paginator(post, 3) # Show 25 contacts per page.
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'proverka.html', {'post': page_obj})
-  
+    
+
+
 
 
 
@@ -128,17 +133,25 @@ class RegisterView(TemplateView):
     template_name = "registration/register.html"
 
     def dispatch(self, request, *args, **kwargs):
+        context = {}
         if request.method == 'POST':
             username = request.POST.get('username')
             email = request.POST.get('email')
             password = request.POST.get('password')
             password2 = request.POST.get('password2')
+            user = authenticate(request, username=username, password=password, email=email)
+            if user is not None:
+                context['error'] = 'user aurhenticated'
+            else:
+               if password == password2:
+                  User.objects.create_user(username, email, password)
+                  return redirect(reverse("login"))
+        
+        return render(request, self.template_name, context) 
 
-            if password == password2:
-                User.objects.create_user(username, email, password)
-                return redirect(reverse("login"))
 
-        return render(request, self.template_name) 
+
+
 
 class LoginView(TemplateView):
     template_name = "registration/login.html"
@@ -152,10 +165,9 @@ class LoginView(TemplateView):
             if user is not None:
                 login(request, user)
                 return redirect("search-element")
-            else:
-                context['error'] = "Логин или пароль неправильные"
+            
+            context['error'] = "Логин или пароль неправильные"
         return render(request, self.template_name, context)
-
 
 class ProfilePage(TemplateView):
     template_name = "registration/profile.html"

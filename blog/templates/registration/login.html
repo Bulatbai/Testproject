@@ -19,18 +19,23 @@
     {% extends 'basesmy.html' %} 
     {%block pages%}
     
+  
+<div id='left' class='container'>
     {% if error %}
-        <div style="color:red;">{{ error }}</div>
-    {% endif %}
-<div id='left'>
+    <div id='size' style="color:red;">{{ error }}</div>
+{% endif %}
     <form method="post">
-        <h1>Вход на сайт</h1>
+        <h1 id='size'>Вход на сайт</h1>
         {% csrf_token %}
         <p><input id='size' type="text" name="username" placeholder="Логин"></p>
         <p><input id='size' type="password" name="password" placeholder="Пароль"><p>
-        <input type="submit" value="Войти">
+        <input id='size' type="submit" value="Войти">
     </form>
+
+ 
 </div>
+
+ 
 {% endblock%}
 </body>
 </html>
