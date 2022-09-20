@@ -64,12 +64,16 @@
       color: blue;
   }
 
- 
-
-
     #tup{
       margin-right: 600px;
     }
+
+
+
+ 
+
+
+
 
     #navbar {
         margin-top: 50px;
@@ -380,9 +384,11 @@
           color: #2f2f2f;
         }
         
-        @media screen and (min-width: 24.375em) {
+        @media screen and (min-width: 1025) {
           .legal .legal__links {
-            margin-left: auto;
+            top: 100px
+            left: 100px
+            transform: translate(-100%, -100%)
           }
         }
         
@@ -409,16 +415,20 @@
 
 
 
+ 
 
 
-
-        body{margin:0;overflow-x:hidden}
+        {% comment %} body{margin:0;overflow-x:hidden}
 header{width:100%;display:table;background-color:#002e5b;margin-bottom:50px}
 .container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 .toggle-icon{background-color: black;   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");width:30px;
     height:30px;position:absolute; }
 @media (min-width: 1200px) {
-.container{max-width:1140px}
+.container{max-width:1140px
+top: 100px
+left: 100px
+transform: translate(-100%, -100%)}
+
 }
 #logo{float:left;font-size:25px;text-transform:uppercase;color:orange;font-weight:600;text-decoration:none;padding:11px 0}
 nav{width:auto;float:right;margin-top:7px}
@@ -432,9 +442,17 @@ input[type=checkbox],label{display:none}
 
 
 @media only screen and (max-width: 980px) {
-  header{padding:20px 0}
-  #logo{padding:0}
-  input[type=checkbox]{position:absolute;top:-9999px;left:-9999px;background:none}
+  header{padding:20px 0
+    top: 100px
+    left: 100px
+    transform: translate(-100%, -100%)}
+
+  #logo{padding:0
+    top: 100px
+    left: 100px
+    transform: translate(-100%, -100%)}
+  input[type=checkbox]{position:absolute;top:-9999px;left:-9999px;background:none
+  }
   input[type=checkbox]:fous{background:none}
   label{float:right;display:inline-block;cursor:pointer;margin-right:65px}
   input[type=checkbox]:checked ~ nav{display:block}
@@ -447,7 +465,9 @@ input[type=checkbox],label{display:none}
   label{padding:5px 0}
   #logo{font-size:20px}
   nav{top:47px}
-  }
+  }   {% endcomment %}
+
+
 
         </style>
 
@@ -488,7 +508,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 .woocommerce form .form-row .required { visibility: visible; }
 </style>
 <link rel="stylesheet" id="fodia-style-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/style.css?ver=6.0.1" type="text/css" media="all">
-{% comment %} <link rel="stylesheet" id="bootstrap-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/bootstrap.min.css?ver=1657870098" type="text/css" media="all"> {% endcomment %}
+<link rel="stylesheet" id="bootstrap-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/bootstrap.min.css?ver=1657870098" type="text/css" media="all">
 <link rel="stylesheet" id="animate-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/animate.min.css?ver=1657870098" type="text/css" media="all">
 <link rel="stylesheet" id="fontawesome-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/fontawesome.min.css?ver=1657870098" type="text/css" media="all">
 <link rel="stylesheet" id="icofont-css" href="https://themes.envytheme.com/fodia/wp-content/themes/fodia/assets/css/icofont.min.css?ver=1657870098" type="text/css" media="all">
@@ -559,9 +579,9 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <meta name="generator" content="WordPress 6.0.1">
 <meta name="generator" content="WooCommerce 6.5.1">
 	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
-	{% comment %} <link rel="icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png" sizes="32x32">
+ <link rel="icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png" sizes="32x32">
 <link rel="icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png" sizes="192x192">
-<link rel="apple-touch-icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png">   {% endcomment %}
+<link rel="apple-touch-icon" href="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png">    
 <link   rel="icon" href="static/img/main.ico"  sizes="32x32">
 <meta name="msapplication-TileImage" content="https://themes.envytheme.com/fodia/wp-content/uploads/2020/06/favicon-1-1.png">
 <style type="text/css" title="динамический CSS" class="options-output">body{font-family:"Josefin Sans";}body{font-size:15px;}.white-bg-navbar.navbar-expand-lg .navbar-nav .nav-item .nav-link, .transparent-navbar.navbar-expand-lg .navbar-nav .nav-item .nav-link{font-size:14px;}</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
@@ -605,7 +625,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
  
-    <header   class="navbar navbar-expand-lg navbar-light bg-light white-bg-navbar">
+    {% comment %} <header   class="navbar navbar-expand-lg navbar-light bg-light white-bg-navbar">
       <div class="container">
           <a href="#" id="logo" target="_blank"></a>
           <label   for="toggle-1" class="toggle-menu"><i class="toggle-icon"></i></label>
@@ -643,8 +663,57 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
   </header>  
 
 
- 
+  {% endcomment %}
 
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light white-bg-navbar">
+        <div class="container">
+                  <a class="navbar-brand" href="#">
+              <h2 class="main-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Фодия</font></font></h2> 			</a>
+
+                  <a class="navbar-brand black-logo" href="#">
+              <h2 class="optional-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bo.Ata</font></font></h2> 			</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              
+               <form action="{% url 'search-element' %}" method="GET">
+                <input type='search' type='text' name='q' placeholder="search">
+                <button type='submit'>search</button>
+                </form> 
+                <ul id="menu-header-menu" class="navbar-nav ml-auto"><li id="menu-item-18" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-18 nav-item"><a title="Дом" href="#" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Дом</font></font></a></li>
+
+<li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20 nav-item"><a title="Предложение" href="/blogi/" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Посты</font></font></a></li>
+<li id="menu-item-240" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-240 nav-item"><a title="Меню" href="#" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Меню</font></font></a></li>
+
+<li id="menu-item-241" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241 nav-item"><a title="Повара" href="#" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разработчики</font></font></a></li>
+<li id="menu-item-414" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children dropdown active menu-item-414 nav-item"><a title="Магазин" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link" id="menu-item-dropdown-414"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Магазин</font></font></a>
+<ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-414" role="menu">
+<li id="menu-item-413" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-413 nav-item"><a title="Магазин" href="/" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Магазин</font></font></a></li>
+<li id="menu-item-403" class="menu-item menu-item-type-post_type menu-item-object-product menu-item-403 nav-item"><a title="информация о продукте" href="#" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">информация о продукте</font></font></a></li>
+<li id="menu-item-376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-376 nav-item"><a title="Проверить" href="#" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Проверить</font></font></a></li>
+<li id="menu-item-377" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-11 current_page_item active menu-item-377 nav-item"><a title="Корзина" href="/by/" class="dropdown-item"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Корзина</font></font></a></li>
+</ul>
+</li>
+{%if  user.is_authenticated %} 
+<li id="menu-item-19" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19 nav-item"><a title="О" href="/upload/" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">админ</font></font></a></li>
+<li id="menu-item-242"   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-242 nav-item"><a title="Галерея" id='Otstups' href="{% url 'logout-login' %}" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">выйти</font></font></a></li>
+
+{% else %}
+<li id="menu-item-243" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-243 nav-item"><a title="Блог" id='Otstups' href="{% url 'login' %}" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">войти</font></font></a></li>
+<li id="menu-item-244"   class="menu-item menu-item-type-custom menu-item-object-custom menu-item-244 nav-item"><a title="Контакт"  id='Ot' href="{% url 'register' %}" class="nav-link"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Регистрация</font></font></a></li>
+
+{%endif%}
+</ul>
+     
+
+            </div>
+        </div>
+    </nav>
+</header>
 
  
 
