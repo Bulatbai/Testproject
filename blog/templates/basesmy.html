@@ -4,26 +4,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>shop card</title>
-	 <link rel="stylesheet" href="static/libs/modal/modal.css">
-	<link rel="stylesheet" href="static/css/style.css">
- {% comment %} <link rel="shortcut icon" href="static/img/main.ico" type="image/x-icon"/> {% endcomment %}
+ 
  
     <style>
 
       #left{
-        margin-left: 500px
+        margin-left: 500px;
+        margin-right: 500px;
+        margin-top: 100px;
         
     }
+
+
     #size{
-        height: 30px;
-        width: 300px;
+        height: 40px;
+        width: 400px;
     }
-    @media only screen and (max-width: 1025px){
+    @media only screen and (max-width: 768px){
 
         #size{
             top: 100%;
             left: 100%;
-            transform: translate(-150%, -150%);
+            transform: translate(-100%, -100%);
         }
 
     }
@@ -106,6 +108,8 @@
       
       
       
+
+
           
       
       
@@ -383,8 +387,10 @@
         .heart {
           color: #2f2f2f;
         }
+
+
         
-        @media screen and (min-width: 1025) {
+        @media screen and (min-width: 768px) {
           .legal .legal__links {
             top: 100px
             left: 100px
@@ -392,7 +398,7 @@
           }
         }
         
-        @media screen and (min-width: 40.375em) {
+     @media screen and (min-width: 40.375em) {
           .footer__nav > * {
             flex: 1;
           }
@@ -408,66 +414,7 @@
           .footer__nav {
             flex: 2 0px;
           }
-        }
-
- 
-
-
-
-
- 
-
-
-        {% comment %} body{margin:0;overflow-x:hidden}
-header{width:100%;display:table;background-color:#002e5b;margin-bottom:50px}
-.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
-.toggle-icon{background-color: black;   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");width:30px;
-    height:30px;position:absolute; }
-@media (min-width: 1200px) {
-.container{max-width:1140px
-top: 100px
-left: 100px
-transform: translate(-100%, -100%)}
-
-}
-#logo{float:left;font-size:25px;text-transform:uppercase;color:orange;font-weight:600;text-decoration:none;padding:11px 0}
-nav{width:auto;float:right;margin-top:7px}
-nav ul{display:table;float:right;margin:0;padding:0}
-nav ul li{float:left;list-style-type:none}
-nav ul li:last-child{padding-right:0}
-nav ul li a{color:black;font-size:19px;padding:7px 19px;display:inline-block;text-decoration:none}
-nav ul li a:hover{background-color:#143a06;color:#fff9c8;text-decoration:underline}
-input[type=checkbox],label{display:none}
-
-
-
-@media only screen and (max-width: 980px) {
-  header{padding:20px 0
-    top: 100px
-    left: 100px
-    transform: translate(-100%, -100%)}
-
-  #logo{padding:0
-    top: 100px
-    left: 100px
-    transform: translate(-100%, -100%)}
-  input[type=checkbox]{position:absolute;top:-9999px;left:-9999px;background:none
-  }
-  input[type=checkbox]:fous{background:none}
-  label{float:right;display:inline-block;cursor:pointer;margin-right:65px}
-  input[type=checkbox]:checked ~ nav{display:block}
-  nav{display:none;position:absolute;right:0;top:50px;background-color:#002e5b;padding:0;z-index:99}
-  nav ul{width:auto}
-  nav ul li{float:none;padding:0;width:100%;display:table}
-  nav ul li a{color:#FFF;font-size:15px;padding:10px 20px;display:block;border-bottom:1px solid rgba(225,225,225,0.1)}
-  }
-  @media only screen and (max-width: 360px) {
-  label{padding:5px 0}
-  #logo{font-size:20px}
-  nav{top:47px}
-  }   {% endcomment %}
-
-
+        }  
 
         </style>
 
@@ -587,7 +534,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <style type="text/css" title="динамический CSS" class="options-output">body{font-family:"Josefin Sans";}body{font-size:15px;}.white-bg-navbar.navbar-expand-lg .navbar-nav .nav-item .nav-link, .transparent-navbar.navbar-expand-lg .navbar-nav .nav-item .nav-link{font-size:14px;}</style><link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
 
       </head>        
- <body>
+ 
 
     
  
@@ -600,70 +547,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
   <body class="archive post-type-archive post-type-archive-product theme-fodia woocommerce-shop woocommerce woocommerce-page woocommerce-js hfeed elementor-default elementor-kit-1 loaded" data-spy="scroll" data-offset="70">
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627"></feFuncR><feFuncG type="table" tableValues="0 0.49803921568627"></feFuncG><feFuncB type="table" tableValues="0 0.49803921568627"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1"></feFuncR><feFuncG type="table" tableValues="0 0.27843137254902"></feFuncG><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0"></feFuncR><feFuncG type="table" tableValues="0 0.64705882352941"></feFuncG><feFuncB type="table" tableValues="0 1"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.94901960784314"></feFuncG><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745"></feFuncR><feFuncG type="table" tableValues="0 1"></feFuncG><feFuncB type="table" tableValues="0.44705882352941 0.4"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></feColorMatrix><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1"></feFuncR><feFuncG type="table" tableValues="0 0.66274509803922"></feFuncG><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725"></feFuncB><feFuncA type="table" tableValues="1 1"></feFuncA></feComponentTransfer><feComposite in2="SourceGraphic" operator="in"></feComposite></filter></defs></svg>
-           
-        <div class="preloader-area">
-          <div class="sk-circle">
-            <div class="sk-circle1 sk-child"></div>
-            <div class="sk-circle2 sk-child"></div>
-            <div class="sk-circle3 sk-child"></div>
-            <div class="sk-circle4 sk-child"></div>
-            <div class="sk-circle5 sk-child"></div>
-            <div class="sk-circle6 sk-child"></div>
-            <div class="sk-circle7 sk-child"></div>
-            <div class="sk-circle8 sk-child"></div>
-            <div class="sk-circle9 sk-child"></div>
-            <div class="sk-circle10 sk-child"></div>
-            <div class="sk-circle11 sk-child"></div>
-            <div class="sk-circle12 sk-child"></div>
-          </div>
-  
-          <div class="loader-section section-left"></div>
-          <div class="loader-section section-right"></div>
-        </div>
- 
+
 
 
  
-    {% comment %} <header   class="navbar navbar-expand-lg navbar-light bg-light white-bg-navbar">
-      <div class="container">
-          <a href="#" id="logo" target="_blank"></a>
-          <label   for="toggle-1" class="toggle-menu"><i class="toggle-icon"></i></label>
-          <input type="checkbox" id="toggle-1">
-      
-          <nav>
-               
-                 
-              <ul>
-
-                    <li><form action="{% url 'search-element' %}" method="GET">
-                    <input type='search' type='text' name='q' placeholder="search">
-                    <button type='submit'>search</button>
-                    </form></li>
-               
-                  
-                  <li><a href="/blogi/">Blog</a></li>
-             
-                  
-                  <li><a href="/admin/">Портфолио</a></li>
-                 
-                 {%if  user.is_authenticated %} 
-                 <li><a href="/upload/">Create POst</a></li>
-                 <li><a  id='Otstups' href="{% url 'logout-login' %}"> выйти</a></li>
-
-                 {%else%}
-                 <li> <a  id='Otstups' href="{% url 'register' %}">Регистрация</a><li>
-                   <li><a id='Ot' href=" {% url 'login' %}">Войти</a></li>
-                   {%endif%}
-
-                  </ul>
-              
-          </nav>
-      </div>
-  </header>  
-
-
-  {% endcomment %}
+ 
 
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light white-bg-navbar">
@@ -766,106 +654,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-
-  <header>
-   
-  </header>
-  
-  <main>
-    
-  </main>
-  
-  <footer class="footer">
-    <div class="footer__addr">
-      <h1 class="footer__logo">Something</h1>
-          
-      <h2>Contact</h2>
-      
-      <address>
-        5534 Somewhere In. The World 22193-10212<br>
-            
-        <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
-      </address>
-    </div>
-    
-    <ul class="footer__nav">
-      <li class="nav__item">
-        <h2 class="nav__title">Media</h2>
-  
-        <ul class="nav__ul">
-          <li>
-            <a href="#">Online</a>
-          </li>
-  
-          <li>
-            <a href="#">Print</a>
-          </li>
-              
-          <li>
-            <a href="#">Alternative Ads</a>
-          </li>
-        </ul>
-      </li>
-      
-      <li class="nav__item nav__item--extra">
-        <h2 class="nav__title">Technology</h2>
-        
-        <ul class="nav__ul nav__ul--extra">
-          <li>
-            <a href="#">Hardware Design</a>
-          </li>
-          
-          <li>
-            <a href="#">Software Design</a>
-          </li>
-          
-          <li>
-            <a href="#">Digital Signage</a>
-          </li>
-          
-          <li>
-            <a href="#">Automation</a>
-          </li>
-          
-          <li>
-            <a href="#">Artificial Intelligence</a>
-          </li>
-          
-          <li>
-            <a href="#">IoT</a>
-          </li>
-        </ul>
-      </li>
-      
-      <li class="nav__item">
-        <h2 class="nav__title">Legal</h2>
-        
-        <ul class="nav__ul">
-          <li>
-            <a href="#">Privacy Policy</a>
-          </li>
-          
-          <li>
-            <a href="#">Terms of Use</a>
-          </li>
-          
-          <li>
-            <a href="#">Sitemap</a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-    
-    <div class="legal">
-      <p>&copy; 2019 Something. All rights reserved.</p>
-      
-      <div class="legal__links">
-        <span>Made with <span class="heart">♥</span> remotely from Anywhere</span>
-      </div>
-    </div>
-  </footer>
-  
-
+ 
 
 
 
@@ -876,7 +665,7 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 <script src="static/libs/modal/modal.js"></script>
 <script src="static/js/product.js"></script>
 <script src="static/js/fixed-block.js"></script>
-{% comment %} <script src="static/js/cart.js"></script>     {% endcomment %}
+ 
 
       <div class="go-top" style="display: block;"><i class="icofont-fork-and-knife"></i></div>
 	<script type="text/javascript">
