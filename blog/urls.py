@@ -15,6 +15,8 @@ urlpatterns = [
     path('accounts/login/', views.LoginView.as_view(), name="login"),
     path('accounts/profile/', views.ProfilePage.as_view(), name="profile"),
     path('logout/', views.logout_user, name="logout-login"),
+    path('instruction/', views.Insruction, name="instruction-html-css"),
+    path('cart/', views.Cart, name="cart")
     # path('search/', views.Search, name='search-element')   
     
 ]

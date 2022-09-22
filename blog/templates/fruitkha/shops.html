@@ -38,22 +38,22 @@
             <div class="col-lg-4 col-md-6 text-center strawberry">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="{% static 'assets/img/products/product-img-1.jpg' %}" alt=""></a>
+                        <a href=" "><img src="{% static 'assets/img/products/product-img-1.jpg' %}" sizes="(max-width: 350px) 100vw, 350px" alt=""></a>
                     </div>
                     <h3>Strawberry</h3>
                     <p class="product-price"><span>Per Kg</span> 85$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href=" " class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div> 
              {% for i in post%}
             <div class="col-lg-4 col-md-6 text-center berry">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="{{i.image.url}}" alt=""></a>
+                        <a href="{% url 'place' i.id %}"><img src="{{i.image.url}}" sizes="(max-width: 350px) 100vw, 350px" alt=""></a>
                     </div>
                     <h3> <a class="d-block" href="{% url 'place' i.id %}" class="title ">{{i.title}}</a></h3>
                     <p class="product-price"><span>Per Kg</span> {{i.price}}$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href="/cart/" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
           {% endfor %}
@@ -61,7 +61,7 @@
             <div class="col-lg-4 col-md-6 text-center lemon">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="{% static 'assets/img/products/product-img-3.jpg' %}" alt=""></a>
+                        <a href=" "><img src="{% static 'assets/img/products/product-img-3.jpg' %}" sizes="(max-width: 350px) 100vw, 350px" alt=""></a>
                     </div>
                     <h3>Lemon</h3>
                     <p class="product-price"><span>Per Kg</span> 35$ </p>
@@ -71,27 +71,27 @@
             <div class="col-lg-4 col-md-6 text-center">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="{% static 'assets/img/products/product-img-4.jpg' %}" alt=""></a>
+                        <a href=" "><img src="{% static 'assets/img/products/product-img-4.jpg' %}" sizes="(max-width: 350px) 100vw, 350px" alt=""></a>
                     </div>
                     <h3>Avocado</h3>
-                    <p class="product-price"><span>Per Kg</span> 50$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <p class=" "><span>Per Kg</span> 50$ </p>
+                    <a href=" " class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="{% static 'assets/img/products/product-img-5.jpg' %}" alt=""></a>
+                        <a href=" "><img src="{% static 'assets/img/products/product-img-5.jpg' %}" sizes="(max-width: 350px) 100vw, 350px" alt=""></a>
                     </div>
                     <h3>Green Apple</h3>
                     <p class="product-price"><span>Per Kg</span> 45$ </p>
-                    <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+                    <a href=" " class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 text-center strawberry">
                 <div class="single-product-item">
                     <div class="product-image">
-                        <a href="single-product.html"><img src="{% static 'assets/img/products/product-img-6.jpg' %}" alt=""></a>
+                        <a href=""><img src="{% static 'assets/img/products/product-img-6.jpg' %}" sizes="(max-width: 350px) 100vw, 350px" alt=""></a>
                     </div>
                     <h3>Strawberry</h3>
                     <p class="product-price"><span>Per Kg</span> 80$ </p>
@@ -103,7 +103,16 @@
     </div>
 </div>
         
-            <!-- products -->
+        
+
+
+
+
+
+
+
+
+<!-- products -->
         
     {% if post.has_other_pages%}
     

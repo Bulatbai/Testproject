@@ -107,7 +107,7 @@
 								      {% if user.is_authenticated%}
 								 
                                     
-								
+									 
                                     <a href="/upload/">создани поста</a>
 									{%else%}
 										<a href="/accounts/register/">регистрация</a>
@@ -115,7 +115,7 @@
 										{%endif%}
 										{% if user.is_authenticated%} 
 										<a title="Галерея" id='Otstups' href="{% url 'logout-login' %}" class="nav-link"> выйти</a>
-										  <a>profile {{user.username}}</a>
+										<a href="/instruction/">html code</a>
 										  {%endif%}
 									</div>
 								</li>

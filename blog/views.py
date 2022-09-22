@@ -30,7 +30,7 @@ def image_upload_view(request):
             return redirect(Blogi)
             # Get the current instance object to display in the template
         img_obj = form.instance
-        return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
+        return render(request, 'fruitkha/create_post.html', {'form': form, 'img_obj': img_obj})
     else:
         form = ImageForm()
     return render(request, 'fruitkha/create_post.html', {'form': form}) 
@@ -44,6 +44,13 @@ def Index(request):
 
 
 
+def Insruction(request):
+    return render(request, 'fruitkha/index.html' )
+
+
+
+def Cart(request):
+    return render(request, 'fruitkha/cart.html' )
 
 
 
@@ -56,7 +63,7 @@ def edit_place(request, id):
             place_form.save()
             return redirect(detail_post, id=id)
     place_forms = ImageForm(instance=place_edit)
-    return  render(request, 'index.html', {'form': place_forms})
+    return  render(request, 'fruitkha/create_post.html', {'form': place_forms})
 
 
 def delete_place(request, id):
@@ -111,7 +118,7 @@ def Blogi(request):
  
     
     return render(request, 'fruitkha/shops.html', {'post': page_obj })
-                                              
+                                                 
 
 
 
