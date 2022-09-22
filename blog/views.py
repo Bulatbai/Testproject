@@ -1,15 +1,25 @@
  
+import imp
+from tkinter.messagebox import RETRY
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse, get_object_or_404
 from django.http import Http404
-from .forms import ImageForm
+from .forms import ImageForm, CommentForm
 from . import models
 from django.urls import reverse
 from django.contrib.auth.models import User
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
+from .models import   Comment, Image
+from django.views.generic.detail import    DetailView
+
+
+
+
+
+
 
 def image_upload_view(request):
     """Process images uploaded by users"""
@@ -23,37 +33,16 @@ def image_upload_view(request):
         return render(request, 'index.html', {'form': form, 'img_obj': img_obj})
     else:
         form = ImageForm()
-    return render(request, 'index.html', {'form': form}) 
+    return render(request, 'fruitkha/create_post.html', {'form': form}) 
 
 
 
 
 
- 
+def Index(request):
+    return render(request, 'fruitkha/Home.html' )
 
-def detail_post(request, id):
-    # user_ob = models.Image.objects.all()
-    # user_obl = models.Image.objects.all()
-    # if request.method == "POST":
-    #     comment_person = Coment_Form(request.POST)
-    #     if comment_person.is_valid():
-    #         comment_person.save()
-    #         return redirect(detail_post, id)
-    # commet = Coment_Form() 
-    
-    try:
-        # post = models.Post.objects.get(id=id)
-        ost = models.Image.objects.get(id=id)
-        try:
-            comment =  {}
-             
-        except models.Image.DoesNotExist:
-            return HttpResponse('<h1>No Comments</h1>')
-    except models.Image.DoesNotExist:
-        # raise Http404('Post does not exixst, baby')
-        return  HttpResponse('<h1> 404 Page not found </h1>')
 
-    return render(request, 'watch.html', {'postingo': ost, 'com': comment})
 
 
 
@@ -84,28 +73,27 @@ def delete_place(request, id):
 
 
 
-# def Search(request):
-#     QueryValue = request.GET.get('q', '')
-#     if QueryValue:
-#         post = models.Image.objects.filter(title__icontains=QueryValue)
-#     else:
-#         post = models.Image.objects.all()
-#     return render(request, 'basesmy.html', {'post': post})
+# class PostDetailView(TemplateView):
+#     model = Comment
+#     template_name = 'registration/koments.html'
+def comm(request, id):
+    post = models.Comment.objects.get(id=id)
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid:
+            comment = comment_form.save(commit=False)
+            comment.save()
+        else:
+            return HttpResponse('<h1> ERROR</h1>')
+    else:
+        comment_form = CommentForm()
+    return render(request, 'registration/koments.html' , {'comment_form': comment_form,'comments': post})
 
 
-# class Search(ListView):
-#     template_name = 'proverka.html'
-#     context_object_name = 'product'
-#     paginate_by = 1
- 
-#     def get_queryset(self):    
-#           return  models.Image.objects.filter(title__icontains=self.request.GET.get('q'))
 
-#     def get_context_data(self, *, object_list=None, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['q'] = self.request.GET.get('q')
-#         return context
- 
+
+
+
 
 def Blogi(request):
     QueryValue = request.GET.get('q')
@@ -114,23 +102,21 @@ def Blogi(request):
         
     else:
         post = models.Image.objects.all()
-        
-        
+        number = 0
  
-    # contact_list = models.Image.objects.all()
     paginator = Paginator(post, 3) # Show 25 contacts per page.
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'proverka.html', {'post': page_obj})
+ 
     
-
-
+    return render(request, 'fruitkha/shops.html', {'post': page_obj })
+                                              
 
 
 
 class RegisterView(TemplateView):
-    template_name = "registration/register.html"
+    template_name = "fruitkha/regist.html"
 
     def dispatch(self, request, *args, **kwargs):
         context = {}
@@ -153,8 +139,9 @@ class RegisterView(TemplateView):
 
 
 
+
 class LoginView(TemplateView):
-    template_name = "registration/login.html"
+    template_name = "fruitkha/login.html"
 
     def dispatch(self, request, *args, **kwargs):
         context = {}
@@ -176,3 +163,49 @@ class ProfilePage(TemplateView):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+
+
+
+def detail_post(request, id):
+    post = models.Image.objects.all()
+    # post = 
+    try:
+        ost = models.Image.objects.get(id=id)
+   
+        try:
+            comment =  {}
+             
+        except models.Image.DoesNotExist:
+            return HttpResponse('<h1>No Comments</h1>')
+    except models.Image.DoesNotExist:
+        # raise Http404('Post does not exixst, baby')
+        return  HttpResponse('<h1> 404 Page not found </h1>')
+    return render(request, 'fruitkha/single-product.html' , { 
+                                          'postingo': ost,})
+
+ 
+
+
+
+def detail(request):
+    
+
+    # posti = get_object_or_404(Image, slug=post)
+    posts = models.Comment.objects.filter(active=True)
+    if request.method == "POST":
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid:
+            comment = comment_form.save(commit=False)
+            comment.save()
+        else:
+            return HttpResponse('<h1> ERROR</h1>')
+    else:
+        comment_form = CommentForm()
+    return render(request, 'basesmy.html' , {'comment_form': comment_form,'comments': posts,})
+                                           
+ 
+
+
+  

@@ -99,7 +99,7 @@
                     </div>
                 </div>
 
-<div id='Отступ'>
+<div id='pilling'>
  {% if user.is_authenticated%}
  <nav>
    <a  id='colors' class='btn btn-olg btn-warning' href="{% url 'edit-place' postingo.id %}">изменить</a> 
@@ -112,15 +112,48 @@
 
 
 
-
-
-
-
-
-
-
-
-
+<div class="container" id='container'>
+  {% if new_comment %}
+   <h2>Your comment has been added.</h2>
+  {% else %}
+   <h2>Add a new comment</h2>
+   <form action="." method="post">
+       {% csrf_token %}
+       {% comment %} {{ comment_form.as_p }} {% endcomment %}
+    <p>{{ comment_form.name }}</p>
+    <p>{{ comment_form.email }}</p>
+    <p>{{ comment_form.body }}</p>
+       <p><input  id="size"   type="submit" value="Add comment"></p>
+   </form>
+  {% endif %}
+  
+  
+  
+  
+  
+  
+  
+  {% with comments.count as total_comments %}
+   <h2>
+       {{ total_comments }} comment{{ total_comments|pluralize }}
+   </h2>
+  {% endwith %}
+  
+  
+  
+  
+  {% for comment in comments %}
+   <div class="comment">
+       <p class="info">
+           Comment {{ forloop.counter }} by {{ comment.name }}
+           {{ comment.created }}
+       </p>
+       {{ comment.body|linebreaks }}
+   </div>
+  {% empty %}
+   <p>There are no comments yet.</p>
+  {% endfor %}
+  </div>
 
 
 

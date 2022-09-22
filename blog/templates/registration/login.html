@@ -3,35 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <!-- CSS only -->
- <style>
+    
  
-    #size{
-        height: 30px;
-        width: 300px;
-    }
- </style>
 </head>
 <body>
     {% extends 'basesmy.html' %} 
     {%block pages%}
     
-  
-<div id='left' class='container'>
-    {% if error %}
-    <div id='size' style="color:red;">{{ error }}</div>
-{% endif %}
-    <form method="post">
-        <h1 id='size'>Вход на сайт</h1>
-        {% csrf_token %}
-        <p><input id='size' type="text" name="username" placeholder="Логин"></p>
-        <p><input id='size' type="password" name="password" placeholder="Пароль"><p>
-        <input id='size' type="submit" value="Войти">
-    </form>
 
- 
-</div>
 
+    <section class="contact-area ptb-100">
+        <div class="container">
+    
+    
+            <div class="section-title">
+                <h2>Ready To Get Started?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua quis ipsum suspendisse</p>
+            </div>
+    
+            <div class="contact-form">
+    
+        {% if error %}
+        <div id='size' style="color:red;">{{ error }}</div>
+        {% endif %}
+    
+             <form  method="post">
+           {% csrf_token %}
+    
+    
+    
+    
+                                <label for=""> Name</label>
+                                <input   type="text" name="username" class="form-control" maxlength="155" required="" id="id_first_name">
+                                <div class="help-block with-errors"></div>
+    
+    
+    
+    
+    
+                                <label for="">Your Password</label>
+                                <input   type="password" name="password" class="form-control" maxlength="155" required="" id="id_password">
+                                <div class="help-block with-errors"></div>
+    
+    
+    
+                            <button id='size' type="submit" class="form-control"  >
+                                login
+                            </button>
+    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
  
 {% endblock%}
 </body>

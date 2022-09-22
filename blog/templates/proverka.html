@@ -682,8 +682,100 @@
  {%endfor%}
      </main>
      
- 
 
+
+
+
+
+<div class="products-area ptb-100">
+<div class="container">
+    <div class="row">
+    <div class="col-lg-12 col-md-12">
+       <div class="woocommerce-topbar">
+        <div class="woocommerce-topbar">
+            <div class="woocommerce-notices-wrapper"></div><p class="woocommerce-result-count">
+              Showing 1–6 of 7 results</p>
+                <form class="woocommerce-ordering woocommerce-topbar-ordering" method="get">
+         <select name="orderby" class="orderby form-control" aria-label="Shop order">
+        <option value="menu_order" selected="selected">Default sorting</option>
+        <option value="popularity">Sort by popularity</option>
+        <option value="rating">Sort by average rating</option>
+        <option value="date">Sort by latest</option>
+        <option value="price">Sort by price: low to high</option>
+        <option value="price-desc">Sort by price: high to low</option>
+          </select>
+          <input type="hidden" name="paged" value="1">
+           </form>
+           </div>
+
+     <ul class="products columns-3">
+        {% for i in post%}
+     <div class="block">
+        <li class="product type-product post-380 status-publish first instock product_cat-cake product_cat-fruit product_cat-vegetable product_tag-chocolate has-post-thumbnail shipping-taxable purchasable product-type-simple">
+            
+            <div class="single-products">
+        
+                <a href="https://themes.envytheme.com/fodia/product/chocolate-cake/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+        
+        
+        
+                </a>
+        
+                <div class="products-image"><a href="https://themes.envytheme.com/fodia/product/chocolate-cake/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                    <img width="350" height="350" src="{{i.image.url}}" class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="" loading="lazy" srcset="{{i.image.url}}" sizes="(max-width: 350px) 100vw, 350px">
+                    </a><ul class="product-btn-hover"><a href="https://themes.envytheme.com/fodia/product/chocolate-cake/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                        </a><li class="product-link"><a href="https://themes.envytheme.com/fodia/product/chocolate-cake/" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
+                            </a><a href="#" data-toggle="modal" data-target="#productsModalCenter387">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                        </li>
+                        <li><a href="https://themes.envytheme.com/fodia/product/chocolate-cake/"><i class="fa fa-link" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+        
+        
+        
+                <div class="products-content">
+                    <h3><a href="https://themes.envytheme.com/fodia/product/chocolate-cake/">{{i.title}}</a></h3>
+        
+            <span class="price"><span class="woocommerce-Price-amount amount"><bdi><span class="woocommerce-Price-currencySymbol">$</span>{{i.price}}</bdi></span></span>
+                                <ul>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                        <li><i class="fa fa-star-o"></i></li>
+                    </ul>
+                                <a href="?add-to-cart=387" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-btn" data-product_id="387" data-product_sku="" aria-label="Add “Chocolate Cake” to your cart" rel="nofollow">Add to cart</a>        </div>
+                            </div>
+        
+        
+
+
+
+
+
+
+
+
+
+                            
+        </li>
+        
+
+    </div>
+
+
+        
+   {%endfor%}
+        
+
+        </ul>
+               </div>
+               </div>
+              </div>
+             </div>
+            </div>
 {%endblock%}
 
 

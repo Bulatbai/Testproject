@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Registretion</title>
     <!-- CSS only -->
  
     <style>
@@ -13,24 +13,68 @@
 {%block pages%}
 
 <body>
-    <div id='left'>
-    <h1 id='size'>Регистрация</h1>
-    {% if error %}
+   
+<section class="contact-area ptb-100">
+    <div class="container">
+
+
+
+        <div class="section-title">
+            <h2>Ready To Get Started?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua quis ipsum suspendisse</p>
+        </div>
+
+        <div class="contact-form">
+
+   {% if error %}
     <div id='size' style="color:red;">{{ error }}</div>
     {% endif %}
-
-    <form classs='form-box'  method="post">
+         <form  method="post">
         {% csrf_token %}
-        <p><input id='size' type="text" name="username" placeholder='username' required=''></p>
-       <p><input  id='size' type="email" name="email" placeholder='Email'  required=''></p>
-        <p><input id='size' type="password" name="password" placeholder='password'  required=''></p>
-         <p><input id='size' type="password" name="password2" placeholder='confirm password'  required=''></p>
-
-        <input id='size' type="submit" value="Регистрация">
-    </form>
-</div>
 
 
+
+
+                            <label for=""> Name</label>
+                            <input type="text" name="username" class="form-control" maxlength="155" required="" id="id_first_name">
+                            <div class="help-block with-errors"></div>
+
+
+
+
+                            <label for="">Email</label>
+                            <input type="email" name="email" class="form-control" maxlength="155" required="" id="id_first_email">
+                            <div class="help-block with-errors"></div>
+
+
+
+
+
+
+
+                            <label for="">Your Password</label>
+                            <input type="password" name="password" class="form-control" maxlength="155" required="" id="id_password">
+                            <div class="help-block with-errors"></div>
+
+
+                            <label for="">Confirm Password</label>
+                            <input type="password" name="password2" class="form-control" maxlength="155" required="" id="id_password2">
+
+
+
+
+
+                        <button  id="size"  type="submit" class="form-control">
+                            Регистрация
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 {% endblock%}
 </body>
