@@ -3,8 +3,7 @@
  {% block  pages%}
  {% load static%}
  
-	<!-- breadcrumb-section -->
-	<!-- breadcrumb-section -->
+ 
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
 			<div class="row">
@@ -53,7 +52,13 @@
                     </div>
                     <h3> <a class="d-block" href="{% url 'place' i.id %}" class="title ">{{i.title}}</a></h3>
                     <p class="product-price"><span>Per Kg</span> {{i.price}}$ </p>
-                    <a href="/cart/" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+ 
+                    <form action="{% url "cart_add" i.id %}" method="post">
+                        {% csrf_token %}
+                    {{ cart_product_form }}
+                       
+                   <i class="fas fa-shopping-cart"><input type="submit"  class="cart-btn"   value="Add to cart"></i>
+                    </form>
                 </div>
             </div>
           {% endfor %}
@@ -111,11 +116,10 @@
 
 
 
-
-<!-- products -->
+ 
         
     {% if post.has_other_pages%}
-    
+           
         <div class="row">
            
             <div class="col-lg-12 text-center">

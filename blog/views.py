@@ -16,6 +16,7 @@ from .models import   Comment, Image
 from django.views.generic.detail import    DetailView
 
 
+from cart.forms import CartAddProductForm
 
 
 
@@ -80,9 +81,7 @@ def delete_place(request, id):
 
 
 
-# class PostDetailView(TemplateView):
-#     model = Comment
-#     template_name = 'registration/koments.html'
+ 
 def comm(request, id):
     post = models.Comment.objects.get(id=id)
     if request.method == "POST":
@@ -111,14 +110,17 @@ def Blogi(request):
         post = models.Image.objects.all()
         number = 0
  
-    paginator = Paginator(post, 3) # Show 25 contacts per page.
+    paginator = Paginator(post, 3)  
 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
  
-    
-    return render(request, 'fruitkha/shops.html', {'post': page_obj })
+    cart_product_form = CartAddProductForm()
+    return render(request, 'fruitkha/shops.html', {'post': page_obj, 'cart_product_form': cart_product_form })
                                                  
+
+ 
+
 
 
 
@@ -187,19 +189,27 @@ def detail_post(request, id):
         except models.Image.DoesNotExist:
             return HttpResponse('<h1>No Comments</h1>')
     except models.Image.DoesNotExist:
-        # raise Http404('Post does not exixst, baby')
         return  HttpResponse('<h1> 404 Page not found </h1>')
+    cart_product_form = CartAddProductForm()
     return render(request, 'fruitkha/single-product.html' , { 
-                                          'postingo': ost,})
+                                          'postingo': ost, 'cart_product_form': cart_product_form})
 
  
+# def detail_post(request, id):
+#     ost = models.Image.objects.get(id=id)
+#     # product = get_object_or_404(Image,
+#     #                             id=id,
+#     #                             slug=slug,
+#     #                             available=True)
+#     cart_product_form = CartAddProductForm()
+#     return render(request, 'fruitkha/single-product.html', {'postingo': ost,
+#                                                         'cart_product_form': cart_product_form})
+
 
 
 
 def detail(request):
-    
 
-    # posti = get_object_or_404(Image, slug=post)
     posts = models.Comment.objects.filter(active=True)
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -210,9 +220,14 @@ def detail(request):
             return HttpResponse('<h1> ERROR</h1>')
     else:
         comment_form = CommentForm()
-    return render(request, 'basesmy.html' , {'comment_form': comment_form,'comments': posts,})
+    return render(request, 'basesmy.html' , {'comment_form': comment_form,'comments': posts})
                                            
  
 
 
   
+
+
+
+
+ 

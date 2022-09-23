@@ -95,16 +95,35 @@
 										<li><a href="/blogi/">Shop</a></li>
 										<li><a href="checkout.html">Check Out</a></li>
 										<li><a href="single-product.html">Single Product</a></li>
-										<li><a href="cart.html">Cart</a></li>
+										<div class="cart">
+										
+										</div>
+										{% comment %} <li><a href="cart.html">Cart</a></li> {% endcomment %}
 									</ul>
 								</li>
 
 
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-								      {% if user.is_authenticated%}
+											{% comment %} {% with total_items=cart|length %}
+												{% if cart|length > 0 %}
+													Your cart:
+													<a   href="{% url "cart_detail" %}"> 
+														{{ total_items }} {{ total_items|pluralize }}
+														 ${{ cart.get_total_price }}    
+														 </a>
+															
+												{% else %}
+												 
+												{% endif %}
+											{% endwith %} {% endcomment %}
+											{% with total_items=cart|length %}
+											{% comment %} {% if cart|length > 0 %} {% endcomment %}
+									 <a class="shopping-cart" href="{% url "cart_detail" %}"><i class="fas fa-shopping-cart">{{ total_items }} {{ total_items|pluralize }}</i></a>
+									 {% endwith %} 
+									 <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>  
+							 
+										{% if user.is_authenticated%}
 								 
                                     
 									 
@@ -277,6 +296,7 @@
 	<script src="{% static  'assets/js/main.js' %}"></script>
 
 
-
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9550202236795961"
+     crossorigin="anonymous"></script>
 </body>
 </html>

@@ -40,10 +40,15 @@
 						<p class="single-product-pricing"><span>Per Kg</span> ${{postingo.price}}</p>
 						<p>{{postingo.description}}Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p>
 						<div class="single-product-form">
-							<form action="index.html">
-								<input type="number" placeholder="0">
-							</form>
-							<a href=" " class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+							{% comment %} <p class="price">${{ product.price }}</p> {% endcomment %}
+                                   <form action="{% url "cart_add" postingo.id %}" method="post">
+									 {% csrf_token %}
+                                 {{ cart_product_form }}
+                                    
+                                <input type="submit" class="fas fa-shopping-cart" value="Add to cart">
+                                 </form>
+
+						 
 							<p><strong>Categories: </strong>Fruits, Organic</p>
 						</div>
 						<h4>Share:</h4>
@@ -105,10 +110,9 @@
 			</div>
 		</div>
 	</div>
-	<!-- end more products -->
+	 
 
  
-	<!-- logo carousel -->
 
 
 
