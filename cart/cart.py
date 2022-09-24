@@ -41,7 +41,9 @@ class Cart(object):
        """
        Удаление товара из корзины.
         """
+       
        product_id = str(product.id)
+       
        if product_id in self.cart:
            del self.cart[product_id]
            self.save()

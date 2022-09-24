@@ -51,7 +51,7 @@
                               {% for item in cart %}
                                 {% with product=item.product %}
 								<tr class="table-body-row">
-									<td class="product-remove"><a href="{% url "cart_remove" product.id%}">Remove<i class="far fa-window-close"></i></a></td>
+									<td class="product-remove"><a href="{% url "cart_remove" product.id%}"> <i class="far fa-window-close"></i></a></td>
 									<td class="product-image">     <a href="{{ product.get_absolute_url }}">
                                         <img src="
                                             {% if product.image %}
@@ -60,13 +60,38 @@
                                             {% static 'assets/img/products/product-img-2.jpg' %}
                                             {% endif %}">
                                      </a></td>
-									<td class="product-name">{{ product.name }}</td>
-									<td class="product-price">${{ item.price }}</td>
-									<td class="product-quantity">{{ item.quantity }} </td>
-									<td class="product-total">${{ item.total_price }}</td>
-								</tr>
+									
 
+                       <form action="{% url "cart_add" product.id %}" method="post">
+		                    
+					            
+							 {% comment %} {{ cart_product_form }} {% endcomment %}
+							 
+							<td class="product-name">{{ product.names }}
+								{{ item.update_quantity_form.quantity }}
+								{{ item.update_quantity_form.update }}  	
+								<input type="submit" class="fas fa-shopping-cart" value="update"></td>
+								{% csrf_token %}
+								
+								
+							       {% comment %} <td class="product-name">{{ i.name }}</td> {% endcomment %}
+							
+									<td class="product-price">${{ item.price }}</td>
+								
+									<td class="product-quantity">    {{ item.quantity }} </td>
+									<td class="product-total">${{ item.total_price }}</td>
+								
+								
+							 </tr>
+                       </form>  
+							 
+
+ 
+
+
+ 
                                 {% endwith %}
+								
                                 {% endfor %}
 			
 
