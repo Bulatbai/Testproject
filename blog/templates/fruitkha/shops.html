@@ -44,7 +44,7 @@
                     <a href=" " class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                 </div>
             </div>  {% endcomment %}
-            
+
              {% for i in post%}
             <div class="col-lg-4 col-md-6 text-center berry">
                 <div class="single-product-item">
@@ -56,9 +56,10 @@
  
                     <form action="{% url "cart_add" i.id %}" method="post">
                         {% csrf_token %}
-                    {{ cart_product_form }}
+                    <p>{{ cart_product_form }}</p>
                        
-                   <i class="fas fa-shopping-cart"><input type="submit"  class="cart-btn"   value="Add to cart"></i>
+                   
+                        <button> <a class="cart-btn"><i class="fas fa-shopping-cart"> </i> add</a></button> 
                     </form>
                 </div>
             </div>
